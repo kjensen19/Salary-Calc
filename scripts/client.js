@@ -6,6 +6,7 @@ function readyNow() {
     console.log('JQ')
     $("#input-submit").on('click', employeeMaker)
     employeeRender()
+    monthlyExpense()
 }
 
 
@@ -35,6 +36,7 @@ function employeeMaker() {
     console.log(`Employees in func: ${employees[0].firstName}`)
     //call the render function to apply to the DOM
     employeeRender()
+    monthlyExpense()
     //empty input fields
     $('#lName-input').val('')
     $('#id-input').val('')
@@ -58,3 +60,11 @@ function employeeRender(){
         `)
     }
 }
+function monthlyExpense() {
+    let totalMonthlyExpense = 0;
+    for (let employee of employees) {
+        totalMonthlyExpense += Number(employee.annualSalary)
+    }
+    $('#total-target').text(`${totalMonthlyExpense}`)
+}
+
