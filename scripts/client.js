@@ -1,15 +1,14 @@
 $(document).ready(readyNow)
 console.log('JS')
 
+
 function readyNow() {
     console.log('JQ')
     $("#input-submit").on('click', employeeMaker)
+    employeeRender()
 }
 
 
-
-
-let employees = []
 let individualEmployee = {
     firstName: 'Kyle',
     lastName: 'Jensen',
@@ -17,6 +16,11 @@ let individualEmployee = {
     jobTitle: 'overcomplicator',
     annualSalary: '1'
 }
+let employees = [individualEmployee]
+
+
+
+
 
 function employeeMaker() {
     //grab inputs to create new employee object
@@ -29,10 +33,28 @@ function employeeMaker() {
     }//end object
     employees.push(newEmployee)
     console.log(`Employees in func: ${employees[0].firstName}`)
+    //call the render function to apply to the DOM
+    employeeRender()
     //empty input fields
     $('#lName-input').val('')
     $('#id-input').val('')
     $('#title-input').val('')
     $('#salary-input').val('')
     $('#fName-input').val('')
+    return employees
+}
+function employeeRender(){
+    $('#tableBody').empty()
+    for (let employee of employees) {
+
+        $('#tableBody').append(`
+        <tr>
+            <td>${employee.firstName}</td>
+            <td>${employee.lastName}</td>
+            <td>${employee.idNumber}</td>
+            <td>${employee.jobTitle}</td>
+            <td>${employee.annualSalary}</td>
+        </tr>
+        `)
+    }
 }
