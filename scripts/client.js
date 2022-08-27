@@ -14,7 +14,7 @@ function readyNow() {
 let individualEmployee = {
     firstName: 'Kyle',
     lastName: 'Jensen',
-    idNumber: 7578,
+    idNumber: '7578',
     jobTitle: 'overcomplicator',
     annualSalary: '12000'
 }
@@ -58,7 +58,7 @@ function employeeRender(){
             <td>${employee.idNumber}</td>
             <td>${employee.jobTitle}</td>
             <td>${employee.annualSalary}</td>
-            <td><button id="${employee.firstName}" class="delBut">Delete ${employee.firstName}</button></td>
+            <td><button id="${employee.idNumber}" class="delBut">Delete ${employee.firstName}</button></td>
         </tr>
         `)
     }
@@ -72,19 +72,28 @@ function monthlyExpense() {
     if (totalMonthlyExpense >= 20000) {
         $('#monthly-total').css("color", "red")
     }
+    else {
+        $('#monthly-total').css("color", "black")
+    }
     $('#total-target').text(`${totalMonthlyExpense}`)
 }
 
 function removeEmployee() {
     //console.log([$(this).attr('id').toLowerCase()])
+    let purgedArray = []
     for (let employee of employees) {
         //console.log(`employee name = ${employee.firstName}`)
         //console.log(`this = ${$(this).attr('id')}`)
-        if (employee.firstName === $(this).attr('id')) {
-            //console.log('here')
-            employee.annualSalary = 0
+        if (employee.idNumber === $(this).attr('id')) {
+            console.log('if', employee.idNumber)
+        }
+        else {
+            console.log('else', employee.idNumber)
+            purgedArray.push(employee)
         }
     }
+    employees = purgedArray
     $(this).closest('tr').remove()
     monthlyExpense()
+    return employees
 }
