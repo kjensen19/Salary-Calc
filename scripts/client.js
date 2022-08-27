@@ -5,6 +5,7 @@ console.log('JS')
 function readyNow() {
     console.log('JQ')
     $("#input-submit").on('click', employeeMaker)
+    $("#tableBody").on('click', '.delBut', removeEmployee)
     employeeRender()
     monthlyExpense()
 }
@@ -15,7 +16,7 @@ let individualEmployee = {
     lastName: 'Jensen',
     idNumber: 7578,
     jobTitle: 'overcomplicator',
-    annualSalary: '1'
+    annualSalary: '12000'
 }
 let employees = [individualEmployee]
 
@@ -36,6 +37,7 @@ function employeeMaker() {
     console.log(`Employees in func: ${employees[0].firstName}`)
     //call the render function to apply to the DOM
     employeeRender()
+    //call the expense function to calculate and render
     monthlyExpense()
     //empty input fields
     $('#lName-input').val('')
@@ -56,6 +58,7 @@ function employeeRender(){
             <td>${employee.idNumber}</td>
             <td>${employee.jobTitle}</td>
             <td>${employee.annualSalary}</td>
+            <td><button id="${employee.firstName}" class="delBut">Delete ${employee.firstName}</button></td>
         </tr>
         `)
     }
@@ -65,6 +68,23 @@ function monthlyExpense() {
     for (let employee of employees) {
         totalMonthlyExpense += Number(employee.annualSalary)
     }
+    totalMonthlyExpense = (totalMonthlyExpense / 12).toFixed()
+    if (totalMonthlyExpense >= 20000) {
+        $('#monthly-total').css("color", "red")
+    }
     $('#total-target').text(`${totalMonthlyExpense}`)
 }
 
+function removeEmployee() {
+    //console.log([$(this).attr('id').toLowerCase()])
+    for (let employee of employees) {
+        //console.log(`employee name = ${employee.firstName}`)
+        //console.log(`this = ${$(this).attr('id')}`)
+        if (employee.firstName === $(this).attr('id')) {
+            //console.log('here')
+            employee.annualSalary = 0
+        }
+    }
+    $(this).closest('tr').remove()
+    monthlyExpense()
+}
