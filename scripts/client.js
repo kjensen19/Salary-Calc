@@ -58,16 +58,21 @@ function employeeMaker() {
 function employeeRender(){
     $('#tableBody').empty()
     for (let employee of employees) {
-        $('#tableBody').append(`
-        <tr>
-            <td>${employee.firstName}</td>
-            <td>${employee.lastName}</td>
-            <td>${employee.idNumber}</td>
-            <td>${employee.jobTitle}</td>
-            <td class="cell-highlight">${employee.annualSalary}</td>
-            <td class="del-row"><button id="${employee.idNumber}" class="delBut">Delete ${employee.firstName}</button></td>
-        </tr>
-        `)
+        if (employee.firstName && employee.lastName && employee.idNumber && employee.jobTitle && employee.annualSalary){
+            $('#tableBody').append(`
+            <tr>
+                <td>${employee.firstName}</td>
+                <td>${employee.lastName}</td>
+                <td>${employee.idNumber}</td>
+                <td>${employee.jobTitle}</td>
+                <td class="cell-highlight">${employee.annualSalary}</td>
+                <td class="del-row"><button id="${employee.idNumber}" class="delBut">Delete ${employee.firstName}</button></td>
+            </tr>
+            `)
+        }
+        else {
+            alert('Some information is missing or invalid, please re-enter')
+        }
     }
 }
 function monthlyExpense() {
@@ -80,7 +85,7 @@ function monthlyExpense() {
         $('#monthly-total').css("color", "red")
     }
     else {
-        $('#monthly-total').css("color", "black")
+        $('#monthly-total').css("color", "darkorchid")
     }
     let gaugeVal = ((totalMonthlyExpense / 20000));
     if (gaugeVal >= 1) {
