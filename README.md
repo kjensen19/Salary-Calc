@@ -1,9 +1,13 @@
-# Project Name
+Employee salary calculator.
+Takes as inputs employee information to create an array of data:
+    First Name
+    Last Name
+    Employee ID
+    Job Title
+    Annual Salary
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+Information is then rendered to the DOM via jquery. Input fields can be filled in with information to add new entries to the array, then the table and the monthly information is rerendered.
 
-## Description
+The monthly figure is a reduction of annual salaries which is then compared against a monthly limit (default is 20,000).  If the monthly outlay exceeds that number, the information turns red.
 
-Your project description goes here. What problem did you solve? How did you solve it?
-
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+There is also a gauge that uses a jQuery animate() to show a visual of the percent of the limit being utilized.
