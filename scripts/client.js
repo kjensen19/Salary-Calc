@@ -24,7 +24,7 @@ let otherEmployee = {
     lastName: 'Jensen',
     idNumber: '113',
     jobTitle: 'Teacher',
-    annualSalary: "300000"
+    annualSalary: "108000"
 }
 let employees = [individualEmployee, otherEmployee]
 
@@ -96,9 +96,7 @@ function monthlyExpense() {
         // timing options
         duration: 2000,
         fill: "forwards"
-    }, 
-        {done: function() {
-            $('#meter').css("transform", `rotateZ(${gaugeVal * 180}deg)`)} }
+    }
       )
     }
    

@@ -109,8 +109,8 @@ input:focus {
     background-color: red;
     height: .5rem;
     width: 5rem;
-    left: 48.75%;
-    top: 48.75%;
+    left: 50%;
+    top: 50%;
     transform-origin: 100% 50%;
     animation-fill-mode: forwards;
     
@@ -125,24 +125,25 @@ input:focus {
   } */
 
 #center-dot {
+    right: 10rem;
     left: 0;
     bottom: 5%;
 }
 
 #zero {
     position: relative;
-    right: 40%;
-    top: 0%
-}
-
-#hundred {
-    position: relative;
-    left: 15%;
+    right: 50%;
     top: 0%
 }
 
 #five-o {
     position: relative;
-    left: 25%;
-    bottom: 100%;
+    right: 10%;
+    bottom: 45%
+}
+
+#hundred {
+    position: relative;
+    left: 17%;
+    top: 0%
 }
