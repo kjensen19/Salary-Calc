@@ -18,7 +18,15 @@ let individualEmployee = {
     jobTitle: 'overcomplicator',
     annualSalary: '12000'
 }
-let employees = [individualEmployee]
+
+let otherEmployee = {
+    firstName: 'Rachel',
+    lastName: 'Jensen',
+    idNumber: '113',
+    jobTitle: 'Teacher',
+    annualSalary: "300000"
+}
+let employees = [individualEmployee, otherEmployee]
 
 
 
@@ -34,7 +42,7 @@ function employeeMaker() {
         annualSalary: $('#salary-input').val()
     }//end object
     employees.push(newEmployee)
-    console.log(`Employees in func: ${employees[0].firstName}`)
+    //console.log(`Employees in func: ${employees[0].firstName}`)
     //call the render function to apply to the DOM
     employeeRender()
     //call the expense function to calculate and render
@@ -50,14 +58,13 @@ function employeeMaker() {
 function employeeRender(){
     $('#tableBody').empty()
     for (let employee of employees) {
-
         $('#tableBody').append(`
         <tr>
             <td>${employee.firstName}</td>
             <td>${employee.lastName}</td>
             <td>${employee.idNumber}</td>
             <td>${employee.jobTitle}</td>
-            <td>${employee.annualSalary}</td>
+            <td class="cell-highlight">${employee.annualSalary}</td>
             <td><button id="${employee.idNumber}" class="delBut">Delete ${employee.firstName}</button></td>
         </tr>
         `)

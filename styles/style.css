@@ -1,0 +1,68 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+input {
+    padding: .5rem;
+    margin: .5rem;
+    border:1px solid #eee;
+    box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.442);
+    border-radius: 1rem;
+}
+/* change background color of selected input */
+input:focus {
+    background-color: #93c4f6;
+    border-color: #000;
+  }
+
+  table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    text-align: center;
+	vertical-align: middle;
+  }
+
+  caption {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: left;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  thead {
+    background-color: #333;
+    color: white;
+    font-size: 0.875rem;
+	text-transform: uppercase;
+	letter-spacing: 2%;
+  }
+
+  /* if border set in table it is outside, in th, td it is all cells */
+
+  th, td {
+    padding: .5rem;
+  }
+
+  thead th {
+    width: 20%;
+  }
+/* highlight cell for emphasis */
+  .cell-highlight {
+    background-color: gold;
+    font-weight: bold;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: #fff;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #eee;
+  }
+
