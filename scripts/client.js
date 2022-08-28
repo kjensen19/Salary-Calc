@@ -65,7 +65,7 @@ function employeeRender(){
             <td>${employee.idNumber}</td>
             <td>${employee.jobTitle}</td>
             <td class="cell-highlight">${employee.annualSalary}</td>
-            <td><button id="${employee.idNumber}" class="delBut">Delete ${employee.firstName}</button></td>
+            <td class="del-row"><button id="${employee.idNumber}" class="delBut">Delete ${employee.firstName}</button></td>
         </tr>
         `)
     }
@@ -82,9 +82,27 @@ function monthlyExpense() {
     else {
         $('#monthly-total').css("color", "black")
     }
+    let gaugeVal = ((totalMonthlyExpense / 20000));
+    if (gaugeVal >= 1) {
+        gaugeVal = 1
+    }
+    console.log(`gaugeVal ${gaugeVal}`)
     $('#total-target').text(`${totalMonthlyExpense}`)
-}
-
+    //document.querySelector('#meter').style.setProperty('--m',`${gaugeVal}`)
+    document.getElementById("meter").animate([
+        // keyframes
+        {transform: `rotateZ(${gaugeVal * 180}deg)`}
+      ], { 
+        // timing options
+        duration: 2000,
+        fill: "forwards"
+    }, 
+        {done: function() {
+            $('#meter').css("transform", `rotateZ(${gaugeVal * 180}deg)`)} }
+      )
+    }
+   
+      
 function removeEmployee() {
     //console.log([$(this).attr('id').toLowerCase()])
     let purgedArray = []

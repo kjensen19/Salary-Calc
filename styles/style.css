@@ -5,6 +5,10 @@
 body {
     margin: 0;
     font-family: sans-serif;
+    background-color: antiquewhite;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
 }
 
 input {
@@ -25,6 +29,7 @@ input:focus {
     border: 1px solid black;
     text-align: center;
 	vertical-align: middle;
+    width: 80%;
   }
 
   caption {
@@ -66,3 +71,78 @@ input:focus {
     background-color: #eee;
   }
 
+  button {
+    border-radius: 1rem;
+    padding: .5rem;
+    box-shadow: .3rem .3rem grey;
+  }
+
+  button:active {
+    box-shadow: inset .3rem .3rem grey;
+  }
+
+#monthly-container {
+    display: flex;
+    align-items: right;
+    width: 80%;
+    flex-flow: row-reverse;
+}
+
+#display-gauge {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+
+#gauge-back {
+    border-radius: 50% 50% 0 0;
+    background-color: gray;
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    
+
+}
+
+#meter {
+    background-color: red;
+    height: .5rem;
+    width: 5rem;
+    left: 48.75%;
+    top: 48.75%;
+    transform-origin: 100% 50%;
+    animation-fill-mode: forwards;
+    
+    /* animation-name: rotate;
+    animation-duration: 10s; */
+}
+
+/* @keyframes rotate {
+    100% {
+      transform: rotateZ((var--m) deg);
+    }
+  } */
+
+#center-dot {
+    left: 0;
+    bottom: 5%;
+}
+
+#zero {
+    position: relative;
+    right: 40%;
+    top: 0%
+}
+
+#hundred {
+    position: relative;
+    left: 15%;
+    top: 0%
+}
+
+#five-o {
+    position: relative;
+    left: 25%;
+    bottom: 100%;
+}
