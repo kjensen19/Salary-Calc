@@ -20,7 +20,7 @@
             <input type="number" class="emp-input" id="salary-input" placeholder="Annual Salary" required>
             <button id="input-submit">Submit</button>
         </section>
-        <section id="table-container">
+        <section id="table-container" style="width:100%;">
             <table>
                 <caption>Employee Salary Table</caption>
                 <thead>
@@ -35,21 +35,24 @@
                 <tbody id="tableBody">
                 </tbody>
               </table>
+              <section id="display-gauge">
+                <div id="gauge-back">
+                    <div id="meter">
+                    </div>
+                    <p id="zero"><span class="gauge-number">-</span>0</p>
+                    <!-- <p id="two-five">25</p> -->
+                    <p id="five-o">|</p>
+                    <!-- <p id="seven-five">75</p> -->
+                    <p id="hundred">100<span class="gauge-number">-</span></p>
+                </div>
         </section>
+  
+        </section>
+     
         <section id="monthly-container">
             <h1 id="monthly-total"><span style="color:black">Monthly Expense: </span>$<span id="total-target"></span></h1>
         </section>
-        <section id="display-gauge">
-            <div id="gauge-back">
-                <div id="meter">
-                </div>
-                <p id="zero"><span class="gauge-number">-</span>0</p>
-                <!-- <p id="two-five">25</p> -->
-                <p id="five-o">|</p>
-                <!-- <p id="seven-five">75</p> -->
-                <p id="hundred">100<span class="gauge-number">-</span></p>
-            </div>
-    </section>
+
     </main>
 </body>
 </html>

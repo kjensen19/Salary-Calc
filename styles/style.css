@@ -24,6 +24,12 @@ input:focus {
     border-color: #000;
   }
 
+  #table-container {
+    display: flex;
+    align-items: left;
+    align-content:space-between;
+  }
+
   table {
     border-collapse: collapse;
     border: 1px solid black;
@@ -77,6 +83,14 @@ input:focus {
     box-shadow: .3rem .3rem grey;
   }
 
+  .del-row {
+    background-color: red;
+  }
+
+  .del-but {
+
+  }
+
   button:active {
     box-shadow: inset .3rem .3rem grey;
   }
@@ -84,21 +98,29 @@ input:focus {
 #monthly-container {
     display: flex;
     align-items: right;
-    width: 80%;
+    width: 100vw;
     flex-flow: row-reverse;
 }
+
 
 #display-gauge {
     display: flex;
     align-items: center;
     flex-flow: column;
+    position: relative;
+   align-self:flex-end;
+   justify-self:flex-end;
+   border: 1px solid black;
+   height: 100%;
+   right: 0;
+   left: 5%
 }
 
 #gauge-back {
     border-radius: 50% 50% 0 0;
     background-color: gray;
     width: 10rem;
-    height: 10rem;
+    height:10.375rem;
     display: flex;
     align-items: center;
     
