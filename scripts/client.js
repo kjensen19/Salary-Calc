@@ -1,9 +1,7 @@
 $(document).ready(readyNow)
-console.log('JS')
 
 
 function readyNow() {
-    console.log('JQ')
     $("#input-submit").on('click', employeeMaker)
     $("#tableBody").on('click', '.delBut', removeEmployee)
     employeeRender()
@@ -16,7 +14,7 @@ let individualEmployee = {
     lastName: 'Jensen',
     idNumber: '7578',
     jobTitle: 'overcomplicator',
-    annualSalary: '12000'
+    annualSalary: '0'
 }
 
 let otherEmployee = {
@@ -24,7 +22,7 @@ let otherEmployee = {
     lastName: 'Jensen',
     idNumber: '113',
     jobTitle: 'Teacher',
-    annualSalary: "108000"
+    annualSalary: "70000"
 }
 let employees = [individualEmployee, otherEmployee]
 
@@ -81,7 +79,7 @@ function monthlyExpense() {
         totalMonthlyExpense += Number(employee.annualSalary)
     }
     totalMonthlyExpense = (totalMonthlyExpense / 12).toFixed()
-    if (totalMonthlyExpense >= 20000) {
+    if (totalMonthlyExpense > 20000) {
         $('#monthly-total').css("color", "red")
     }
     else {
